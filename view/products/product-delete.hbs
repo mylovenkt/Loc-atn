@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+{{>head title=this.title subpage='Page X' }}
+
+<body>
+    {{>header  title=this.title}}
+
+    <main>
+        <H1>{{title}}</H1>
+        <div class="container">
+            <form action="/product/delete" method="POST">
+                <BR> Choose ProductCode to delete:
+                <select name="productCode" id="productCode">
+                    {{#each product}}   
+                        <option value="{{ProductCode}}">{{ProductCode}} - {{ProductName}}</option>
+                    {{/each}}
+                </select>
+                <button type="submit">Delete</button>
+            </form>
+        </div>        
+    </main>
+    
+
+    {{>footer}}
+</body>
+
+</html>

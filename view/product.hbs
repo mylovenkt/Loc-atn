@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+{{>head title=this.title subpage='' }}
+
+<body>
+    {{>header  title=this.title}}
+
+    <main>
+        <H1>{{title}}</H1>
+        <ol>
+            {{#each product}}
+            <li>
+                <div>
+                    <H2>{{ProductName}}</H2>
+                    <img height="100px" src="/{{ImgLink}}">
+                    <H3>Giá: {{Price}}</H3>
+                    <H4> Thông tin sản phẩm: </H4>
+                    <p>
+                        {{Information}}
+                    </p>
+                </div>
+            </li>
+            {{/each}}
+        </ol>
+        <form action="/product/new" method="GET">
+            <button type="submit" value="Add New Product">Add New Product</button>
+        </form>
+        <form action="/product/delete" method="GET">
+            <button type="submit" value="Delete a Product">Delete a Product</button>
+        </form>
+        
+    </main>
+    
+
+    {{>footer}}
+</body>
+
+</html>
